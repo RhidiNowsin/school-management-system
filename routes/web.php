@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+Route::get('/privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy');
+Route::get('/terms-of-use', [HomeController::class, 'terms_of_use'])->name('terms_of_use');
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/', [HomeController::class, 'dashboard'])->name('home');
+    Route::get('/home', [HomeController::class, 'dashboard'])->name('home');
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
 });
