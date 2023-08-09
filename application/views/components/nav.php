@@ -18,7 +18,7 @@
       </li>
 <?php else: ?>
 <li class="nav-item">
-        <a class="nav-link" href="<?php echo BASEURL; ?>/profile/studentform">Add Student</a>
+        <a class="nav-link" href="<?php echo BASEURL; ?>/profile/studentform">Add Course</a>
       </li>
 <?php endif; ?>
     </ul>

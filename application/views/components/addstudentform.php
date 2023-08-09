@@ -20,21 +20,18 @@ placeholder="Student id...."  value="<?php if($data['id']): echo $data['id']; en
 
 </div>
 <div class="form-group">
-
-<select name="department" class="form-control"   value="<?php if($data['department']): echo $data['department']; endif; ?>">
-    <option value="">Select Department</option>
-    <option value="CSE">CSE</option>
-    <option value="EEE">EEE</option>
-    <option value="BBA">BBA</option>
-</select>
+<input type="text" name="course" class="form-control"
+placeholder="Student course...."  value="<?php if($data['course']): echo $data['course']; endif; ?>">
 
 <div class="error">
-    <?php if($data['departmentError']): echo $data['departmentError']; endif;?>
-</div>
+    <?php if($data['courseError']): echo $data['courseError']; endif;?>
 </div>
 
+</div>
+
+
 <div class="form-group">
-    <input type="submit" value="Add student" class="btn btn-primary">
+    <input type="submit" value="Add course" class="btn btn-primary">
 
 </div>
 

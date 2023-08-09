@@ -33,10 +33,10 @@ class profile extends framework {
 
         'name'            => $this->input('name'),
         'id'              => $this->input('id'),
-        'department'      => $this->input('department'),
+        'course'          => $this->input('course'),
         'nameError'       => '',
         'idError'         => '',
-        'departmentError' => ''
+        'courseError' => ''
  
        ];
  
@@ -46,17 +46,17 @@ class profile extends framework {
        if(empty($studentData['id'])){
          $studentData['idError'] = "id is required";
        }
-       if(empty($studentData['department'])){
-         $studentData['departmentError'] = "department is required";
+       if(empty($studentData['course'])){
+         $studentData['courseError'] = "course is required";
        }
 
-       if(empty($studentData['nameError']) && empty($studentData['idError']) && empty($studentData['departmentError'])){ 
+       if(empty($studentData['nameError']) && empty($studentData['idError']) && empty($studentData['courseError'])){ 
 
-        $data = [$studentData['name'], $studentData['id'], $studentData['department'], $this->getSESSION('userId')];
+        $data = [$studentData['name'], $studentData['id'], $studentData['course'], $this->getSESSION('userId')];
          if($this->profileModel->addstudent($data)){
 
                 
-        $this->setFlash("studentUpdated", "Student record has been inserted successfully");
+        $this->setFlash("studentUpdated", "Student course has been inserted successfully");
          $this->redirect("profile/index");
          }
          
