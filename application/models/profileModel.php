@@ -10,6 +10,18 @@ class profileModel extends database {
 
     }
 
+    public function getData($userId){
+
+        if($this->Query("SELECT * FROM student WHERE userId = ? ", [$userId])){
+
+            $data = $this->fetchAll();
+            return $data;
+
+        }
+
+    }
+
+
 
 }
 

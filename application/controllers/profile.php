@@ -18,9 +18,10 @@ class profile extends framework {
     }
     public function index(){
 
-
-
-       $this->view("profile");
+      $userId = $this->getSession('userId');
+      $data = $this->profileModel->getData($userId);
+ 
+       $this->view("profile", $data);
 
     }
 
