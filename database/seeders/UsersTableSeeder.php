@@ -30,8 +30,8 @@ class UsersTableSeeder extends Seeder
         $d = [
 
             ['name' => 'School Super Admin',
-                'email' => 'cj@cj.com',
-                'username' => 'cj',
+                'email' => 'abc@abc.com',
+                'username' => 'abc',
                 'password' => $password,
                 'user_type' => 'super_admin',
                 'code' => strtoupper(Str::random(10)),
