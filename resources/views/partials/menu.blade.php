@@ -56,15 +56,15 @@
                     <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['tt.index', 'ttr.edit', 'ttr.show', 'ttr.manage']) ? 'nav-item-expanded nav-item-open' : '' }} ">
                         <a href="#" class="nav-link"><i class="icon-graduation2"></i> <span> Academics</span></a>
 
-                        <!-- <ul class="nav nav-group-sub" data-submenu-title="Manage Academics">
+                        <ul class="nav nav-group-sub" data-submenu-title="Manage Academics">
 
                         {{--Timetables--}}
                             <li class="nav-item"><a href="{{ route('tt.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['tt.index']) ? 'active' : '' }}">Timetables</a></li>
-                        </ul> -->
+                        </ul>
                     </li>
                     @endif
 
-                <!-- {{--Administrative--}}
+                {{--Administrative--}}
                 @if(Qs::userIsAdministrative())
                     <li class="nav-item nav-item-submenu {{ in_array(Route::currentRouteName(), ['payments.index', 'payments.create', 'payments.invoice', 'payments.receipts', 'payments.edit', 'payments.manage', 'payments.show',]) ? 'nav-item-expanded nav-item-open' : '' }} ">
                         <a href="#" class="nav-link"><i class="icon-office"></i> <span> Administrative</span></a>
@@ -88,7 +88,7 @@
                             @endif
                         </ul>
                     </li>
-                @endif -->
+                @endif
 
                 {{--Manage Students--}}
                 @if(Qs::userIsTeamSAT())
@@ -144,10 +144,10 @@
                         <a href="{{ route('classes.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['classes.index','classes.edit']) ? 'active' : '' }}"><i class="icon-windows2"></i> <span> Classes</span></a>
                     </li>
 
-                    <!-- {{--Manage Dorms--}}
+                    {{--Manage Dorms--}}
                     <li class="nav-item">
                         <a href="{{ route('dorms.index') }}" class="nav-link {{ in_array(Route::currentRouteName(), ['dorms.index','dorms.edit']) ? 'active' : '' }}"><i class="icon-home9"></i> <span> Dormitories</span></a>
-                    </li> -->
+                    </li>
 
                     {{--Manage Sections--}}
                     <li class="nav-item">
@@ -212,7 +212,7 @@
 
                 {{--End Exam--}}
 
-                <!-- @include('pages.'.Qs::getUserType().'.menu') -->
+                @include('pages.'.Qs::getUserType().'.menu')
 
                 {{--Manage Account--}}
                 <li class="nav-item">
