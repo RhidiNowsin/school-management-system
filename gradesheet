@@ -1,0 +1,9 @@
+Schema::create('student_performances', function (Blueprint $table) {
+    $table->id();
+    $table->string('student_name');
+    $table->year('year');
+    $table->string('subject');
+    $table->integer('score');
+    $table->timestamps();
+});
+
