@@ -86,29 +86,7 @@
 </script>
 
     </script>
-class StudentPerformanceController extends Controller
-{
-    public function generatePDF(Request $request)
-    {
-        $year = $request->input('year');
-        $data = \DB::table('student_performances')->where('year', $year)->get();
 
-        // Load the view and pass the data
-        $view = view('gradesheet', compact('data'))->render();
-
-        // Setup Dompdf
-        $options = new Options();
-        $options->set('defaultFont', 'Courier');
-        $dompdf = new Dompdf($options);
-        
-        $dompdf->loadHtml($view);
-        $dompdf->setPaper('A4', 'landscape');
-        $dompdf->render();
-        
-        // Stream or download the PDF
-        return $dompdf->stream('gradesheet.pdf');
-    }
-}
 </body>
 </html>
 
